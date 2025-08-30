@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Recommendations</title>
+</head>
+<body style="margin:0; font-family:Arial, sans-serif;">
+
+  <!-- Navbar -->
+  <header>
+    <nav id="navbar" 
+         style="display:flex; align-items:center; gap:12px; padding:12px; border-bottom:1px solid #ddd; background-color:#f8f8f8;">
+      <a href="#home" style="text-decoration:none; color:black; font-weight:bold;">Home</a>
+      <a href="#about" style="text-decoration:none; color:black; font-weight:bold;">About Us</a>
+      <a href="#contact" style="text-decoration:none; color:black; font-weight:bold;">Contact Us</a>
+
+      <span id="nav-search" style="margin-left:auto;display:flex;gap:6px;">
+      <input id="search-input" type="text" placeholder="Search destinations or keywords"
+             style="margin-left:auto; padding:6px;" />
+      <button id="search-btn" style="padding:6px 10px; margin-left:5px;">Search</button>
+      <button id="reset-btn" style="padding:6px 10px;" onclick="clear1()">Reset</button>
+
+
+    </span>
+
+
+    </nav>
+  </header>
+
+  <!-- Hero / Home Section -->
+  <section id="home" 
+    style="height:90vh; background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat; display:flex; align-items:center; justify-content:left; padding-left:50px; color:white; position:relative;">
+
+    <div style="max-width:400px; background:rgba(0,0,0,0.5); padding:20px; border-radius:10px;">
+      <h1 style="font-size:40px; margin-bottom:10px;">EXPLORE<br>DREAM<br>DESTINATION</h1>
+      <p style="margin-bottom:15px; line-height:1.5;">
+        Encouraging exploration of unfamiliar territories, emphasizing diverse cultures, and
+        breathtaking landscapes, while pursuing the thrill of discovery. Start your journey here.
+      </p>
+      <button style="padding:10px 20px; font-size:16px; font-weight:bold; background-color:teal; color:white; border:none; border-radius:5px; cursor:pointer;">
+        BOOK NOW
+      </button>
+    </div>
+
+    
+    <div style="position:absolute; left:20px; bottom:50px; display:flex; flex-direction:column; gap:15px;">
+      <a href="https://twitter.com" target="_blank" style="font-size:24px; color:white;">🐦</a>
+      <a href="https://instagram.com" target="_blank" style="font-size:24px; color:white;">📸</a>
+      <a href="https://youtube.com" target="_blank" style="font-size:24px; color:white;">▶️</a>
+    </div>
+  </section>
+
+
+  
+  <section id="about"
+  style="min-height:90vh;background:url('https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat; padding:50px 20px; position:relative;">
+
+  <div style="max-width:900px;margin:0 auto;background:rgba(0,0,0,0.55);color:#fff;padding:20px 24px;border-radius:12px;">
+    <h2 style="font-size:36px;margin:0 0 10px;">ABOUT US</h2>
+    <p style="margin:0 0 8px;line-height:1.6;">
+      Travel Boom helps curious travelers discover amazing cities, beaches, mountains, and cultural
+      gems across the world. Our recommendations are hand-curated to make trip planning simple and fun.
+    </p>
+    <p style="margin:0;line-height:1.6;">
+      This demo site showcases how we’d structure a real product: clean navigation, fast search, and
+      clear results. Explore and get inspired!
+    </p>
+  </div>
+
+  <div style="max-width:900px;margin:20px auto 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;">
+    <div style="background:rgba(255,255,255,0.9);padding:16px;border-radius:12px;">
+      <h3 style="margin:0 0 6px;">Ava Patel</h3>
+      <p style="margin:0;color:#444;">Product Lead</p>
+    </div>
+    <div style="background:rgba(255,255,255,0.9);padding:16px;border-radius:12px;">
+      <h3 style="margin:0 0 6px;">Liam Chen</h3>
+      <p style="margin:0;color:#444;">Full-Stack Developer</p>
+    </div>
+    <div style="background:rgba(255,255,255,0.9);padding:16px;border-radius:12px;">
+      <h3 style="margin:0 0 6px;">Maya Johnson</h3>
+      <p style="margin:0;color:#444;">Design & Brand</p>
+    </div>
+    <div style="background:rgba(255,255,255,0.9);padding:16px;border-radius:12px;">
+      <h3 style="margin:0 0 6px;">Diego Ruiz</h3>
+      <p style="margin:0;color:#444;">Data & Recommendations</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- Search Results -->
+<div id="results" style="
+  padding:16px 20px;
+  background:#f8f8f8;
+  border-top:1px solid #ddd;">
+</div>
+
+
+
+
+
+<!-- Contact Us Section -->
+<section id="contact"
+  style="min-height:90vh; background:url('https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat; padding:50px 20px; position:relative;">
+
+  <div style="max-width:600px; margin:0 auto; background:rgba(0,0,0,0.6); color:#fff; padding:30px; border-radius:12px;">
+    <h2 style="font-size:36px; margin-bottom:20px; text-align:center;">CONTACT US</h2>
+    <form>
+      <!-- Name -->
+      <div style="margin-bottom:15px;">
+        <label for="name" style="display:block; margin-bottom:5px;">Name</label>
+        <input type="text" id="name" name="name"
+          style="width:100%; padding:10px; border:none; border-radius:5px;" required>
+      </div>
+
+      <!-- Email -->
+      <div style="margin-bottom:15px;">
+        <label for="email" style="display:block; margin-bottom:5px;">Email</label>
+        <input type="email" id="email" name="email"
+          style="width:100%; padding:10px; border:none; border-radius:5px;" required>
+      </div>
+
+      <!-- Message -->
+      <div style="margin-bottom:15px;">
+        <label for="message" style="display:block; margin-bottom:5px;">Message</label>
+        <textarea id="message" name="message" rows="5"
+          style="width:100%; padding:10px; border:none; border-radius:5px;" required></textarea>
+      </div>
+
+      <!-- Submit -->
+      <div style="text-align:center;">
+        <button type="submit"
+          style="padding:12px 20px; font-size:16px; font-weight:bold; background-color:teal; color:white; border:none; border-radius:5px; cursor:pointer;">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+  <script src="./travel_recommendation.js" defer></script>
+</body>
+</html>
